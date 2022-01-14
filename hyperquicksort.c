@@ -28,7 +28,7 @@ u_int64_t partition(u_int64_t *seq, u_int64_t low, u_int64_t high, u_int64_t piv
 			continue;
 		}
 		// swap
-		// after the swap i and j can be increased and decreased j by one
+		// after the swap i can be increased by one and j can be decreased by one
 		u_int64_t temp = seq[j];
 		seq[j--] = seq[i];
 		seq[i++] = temp;
@@ -57,6 +57,8 @@ void seq_quicksort(u_int64_t *seq, u_int64_t low, u_int64_t high)
 	u_int64_t a = seq[low];
 	u_int64_t b = seq[(u_int64_t)((high + low) / 2)];
 	u_int64_t c = seq[high];
+	// PIVOT selected as the median of a,b and c
+	// ^ operator: Bitwise exclusive OR operator
 	if ((a > b) ^ (a > c))
 		pivot = a;
 	else if ((b < a) ^ (b < c))
