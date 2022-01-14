@@ -16,7 +16,7 @@
 
 spack load intel-parallel-studio@professional.2019.4
 
-mpirun -np 32 ../../hqs_O2.o random_50.txt scores_32_O0.csv -save
+mpirun -np 32 ../../hqs.o random_50.txt scores_32_O0.csv -save
 
 
 
